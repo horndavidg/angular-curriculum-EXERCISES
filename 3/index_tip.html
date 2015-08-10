@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app >
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Set Up</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+How much did your meal cost? <input type="text" ng-model="cost">
+
+
+<p>How much do you want to tip?</p>
+<select ng-model="tip.id" convert-to-number>
+  <option value=".1">10%</option>
+  <option value=".15">15%</option>
+  <option value=".20">20%</option>
+</select>
+
+<h3>Subtotal: {{ cost | currency }}</h3>
+
+<h3>Tip: {{ cost * tip.id  | currency }}</h3>
+
+<h3>Total: {{ cost * (1 + tip.id)  | currency }}</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</body>
+</html>
