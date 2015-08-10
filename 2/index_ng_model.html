@@ -12,26 +12,13 @@
 
 
 
-
-
-
-
-
-  <input type="text" placeholder="What is your name" ng-model="name">
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+<select ng-model="model.id" convert-to-number>
+  <option value="I love dogs <3">Dogs</option>
+  <option value="I love cats <3">Cats</option>
+  <option value="I love dogs and cats <3">Dogs and Cats</option>
+  <option value="I don't love anything!">Neither</option>
+</select>
+<h3>{{ model.id }}</h3>
 
 
 
@@ -42,5 +29,3 @@
 	
 </body>
 </html>
-
-
