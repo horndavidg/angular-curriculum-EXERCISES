@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp" >
+<head>
+	
+	<meta charset="UTF-8">
+	
+	<title>Angular</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+<h1>Sign Up Page:</h1>
+
+
+Password: <input type="text" ng-model="password" ng-class="{bad: password.length <= 5, pass: password.length >= 6}">
+
+
+<p ng-class="{bad: password.length <= 5, pass: password.length >= 6}">Your password is {{password.length}} charaters</p>
+
+<div ng-hide="password.length >= 6"> 
+        <h3>Password is Invalid!</h3>
+    </div>
+
+<div ng-show="password.length >= 6"> 
+      <button>
+      Submit
+      </button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+	
+</body>
+</html>

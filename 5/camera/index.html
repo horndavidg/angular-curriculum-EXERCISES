@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp" >
+<head>
+	
+	<meta charset="UTF-8">
+	
+	<title>Angular</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+ <div ng-controller="CameraController">
+
+<h1>Camera Shop</h1>
+
+<select ng-model="sort">
+  <option value="rating">Rating</option>
+  <option value="price">Price</option>
+</select>
+
+ <ul>
+        <li ng-repeat="camera in cameras | orderBy: sort ">
+
+            <h3>{{camera.title}}</h3>
+            <p ng-class="{sale: camera.onSale }">Price: {{camera.price | currency }} <span ng-show="camera.onSale">ON SALE!</span></p>
+            <p>Rating: {{camera.rating}}</p>
+            <img ng-src="{{camera.image}}" alt="{{camera.title}}" />
+
+         </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</body>
+</html>
