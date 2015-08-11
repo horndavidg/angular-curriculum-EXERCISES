@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp" >
+<head>
+	
+	<meta charset="UTF-8">
+	
+	<title>Angular</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="app.js"></script>
+</head>
+<body>
+
+
+
+
+ <div ng-controller="EventsController">
+  
+     <h3>The number is: {{number}}</h3>
+
+         <button ng-click="pickRandomNumber()">Pick Random Number</button>
+
+
+</div>
+
+
+ <div ng-controller="ReverseController">
+  
+     <h3>Word Reverser</h3>
+      <input type="text" ng-model="string">
+         
+			<p>Your word is {{string}}</p>
+
+         <button ng-click="Reverse(string)">Reverse!</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</body>
+</html>

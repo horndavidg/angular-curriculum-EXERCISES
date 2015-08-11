@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp" >
+<head>
+	
+	<meta charset="UTF-8">
+	
+	<title>Angular</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div ng-controller="PingPongController">
+
+<h1 class="center">Ping Pong Score Keeper <button ng-click="Reset()">
+      Reset
+      </button></h1>
+
+<div ng-click="AddPointP()" ng-class="{blue: pscore.score <= 10, red: pscore.loser, green: pscore.winner }" class="playone">
+	
+<h1 class="center">Player 1 (score: {{pscore.games}})</h1>
+
+<h1 class="center big">{{pscore.score}}</h1>
+
+<h2 ng-show="serve == 3 || serve == 4 || serve == 7 || serve == 8 || serve == 11 || serve == 12 || serve == 15 || serve == 16 || serve == 19 || serve == 20 " class="center">Serving!</h2>
+
+
+</div>
+
+<div ng-click="AddPointPP()" ng-class="{blue: pscore.score <= 10, red: ppscore.loser, green: ppscore.winner }" class="playtwo">
+	
+<h1 class="center">Player 2 (score: {{ppscore.games}})</h1>
+
+<h1 class="center big">{{ppscore.score}}</h1>
+
+
+<h2 ng-show="serve == 1 || serve == 2 || serve == 5 || serve == 6 || serve == 9 || serve == 10 || serve == 13 || serve == 14 || serve == 17 || serve == 18 || serve == 21 " class="center">Serving!</h2>
+
+
+
+
+</div> 
+
+
+</div>
+
+
+
+
+
+
+
+	
+</body>
+</html>

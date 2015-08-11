@@ -1,0 +1,39 @@
+.blue {
+	background: blue;
+}
+
+.red {
+	background: red;
+}
+
+.green {
+	background: green;
+}
+
+.playone {
+
+	float: left;
+	height: 300px;
+	width: 300px;
+	border: solid;
+}
+
+.playtwo {
+
+	float: left;
+	height: 300px;
+	width: 300px;
+	border: solid;
+}
+
+.center {
+	text-align: center;
+}
+
+.big {
+	font-size: 80px;
+}
+
+.button {
+	float: bottom;
+}
