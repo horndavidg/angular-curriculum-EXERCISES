@@ -4,3 +4,41 @@
   border-radius: 0;
   
 }
+
+.post {
+	/*float: left;*/
+	overflow: hidden;
+}
+
+.post_title {
+
+	font-size: 24px;
+	font-style: bold;
+}
+
+.top {
+
+	 text-indent: 2em;
+
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+
+.symbol {
+    
+	font-size: 20px;
+}
+
+.post_img {
+
+	height: 260px;
+	width: 260px;
+	float: left;
+}

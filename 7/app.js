@@ -15,7 +15,7 @@ $scope.AddPost = function(newPost){
 			$scope.Posts.push(newPost);
 			$scope.newPost = {title: "", author: "", image: "", description: "", comments: [], votes: 0};
 			$scope.postForm = false;
-
+            $scope.post_form.submitted = false;
 
     } else {
       

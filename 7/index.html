@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
       			
-      			 <li><a href="#" ng-click="ShowPostForm()">&#x002b Submit Post</a></li>
+      			 <li><a href="#" ng-click="ShowPostForm()"><span class="symbol">&#x002b;</span> Submit Post</a></li>
  				
         </ul>
 
@@ -112,6 +112,13 @@
 
 
 
+<div ng-repeat="(key, post) in Posts | filter:searchText">
+  
+
+<blockquote class="post">
+
+<img ng-src="{{post.image}}" alt="{{post.title}}" class="post_img"/>
+<p class="top"><span class="post_title">{{post.title}}</span> <span class="symbol">|</span> <span class="symbol" ng-click="post.votes = post.votes + 1">&#x25B2;</span> <span class="symbol" ng-click="post.votes = post.votes - 1">&#x25BC;</span> <span ng-class="{green: post.votes > 0, red: post.votes < 0}">{{post.votes}}</span></p>
 
 
 
@@ -120,7 +127,10 @@
 
 
 
+</blockquote>
 
+
+</div>
 
 
 
