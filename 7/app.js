@@ -1,10 +1,20 @@
 var app = angular.module("firstApp", []);
 
+
+  app.filter('fromNow', function() {
+    return function(dateString) {
+      return moment(dateString).fromNow()
+    };
+});
+
+
 app.controller("RedditController", function($scope){
 
-$scope.newPost = {title: "", author: "", image: "", description: "", comments: [], votes: 0};
+$scope.newPost = {title: "", author: "", image: "", description: "", comments: [], votes: 0, date: ""};
 $scope.Posts = [];
+$scope.newComment = {author: "", text: ""};
 $scope.postForm = false;
+$scope.commentForm = false;
 $scope.submitted = false;
 $scope.sort = "votes";
 $scope.reverse = true;
@@ -13,7 +23,7 @@ $scope.AddPost = function(newPost){
         
 	if ($scope.post_form.$valid) {
       // Submit as normal
-    
+            $scope.newPost.date = new Date();
 			$scope.Posts.push(newPost);
 			$scope.newPost = {title: "", author: "", image: "", description: "", comments: [], votes: 0};
 			$scope.postForm = false;
@@ -24,19 +34,52 @@ $scope.AddPost = function(newPost){
       		$scope.post_form.submitted = true;
     
     }
+ };
 
 
-
-        
-         };
-
-$scope.ShowPostForm = function(newPost){
+$scope.ShowPostForm = function(){
         if ($scope.postForm === false){
             $scope.postForm = true;
     			} else {
              $scope.postForm = false;
             }
          };
+
+
+$scope.AddComment = function(newComment, post){
+    
+    // console.log(newComment)
+    // console.log(post)
+            post.comments.push(newComment);
+            $scope.newComment = {author: "", text: ""};
+            $scope.commentForm = false;
+            // $scope.comment_form.submitted = false;
+ };
+
+// $scope.AddComment = function(newComment){
+        
+//     if ($scope.comment_form.$valid) {
+//       // Submit as normal
+//             $scope.post.comments.push(newComment);
+//             $scope.newComment = {author: "", text: ""};
+//             $scope.commentForm = false;
+//             $scope.comment_form.submitted = false;
+
+//     } else {
+      
+//             $scope.comment_form.submitted = true;
+    
+//     }
+//  };
+
+$scope.ShowCommentForm = function(){
+        if ($scope.commentForm === false){
+            $scope.commentForm = true;
+                } else {
+             $scope.commentForm = false;
+            }
+         };
+
 
 $scope.Reverse = function(){
         if ($scope.sort === "title"){
@@ -45,11 +88,6 @@ $scope.Reverse = function(){
              $scope.reverse = true;
             }
          };
-
-
-
-
-
 
 
 

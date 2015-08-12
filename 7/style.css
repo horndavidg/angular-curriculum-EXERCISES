@@ -23,6 +23,11 @@
 
 }
 
+.small {
+	font-size: 10px;
+}
+
+
 .red {
 	color: red;
 }
