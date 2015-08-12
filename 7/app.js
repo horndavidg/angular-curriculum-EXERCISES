@@ -6,6 +6,8 @@ $scope.newPost = {title: "", author: "", image: "", description: "", comments: [
 $scope.Posts = [];
 $scope.postForm = false;
 $scope.submitted = false;
+$scope.sort = "votes";
+$scope.reverse = true;
 
 $scope.AddPost = function(newPost){
         
@@ -36,7 +38,13 @@ $scope.ShowPostForm = function(newPost){
             }
          };
 
-
+$scope.Reverse = function(){
+        if ($scope.sort === "title"){
+            $scope.reverse = false;
+                } else {
+             $scope.reverse = true;
+            }
+         };
 
 
 

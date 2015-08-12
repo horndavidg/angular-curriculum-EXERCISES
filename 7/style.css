@@ -16,9 +16,10 @@
 	font-style: bold;
 }
 
-.top {
+.indent {
 
 	 text-indent: 2em;
+	 padding-left: 2em;
 
 }
 
@@ -41,4 +42,5 @@
 	height: 260px;
 	width: 260px;
 	float: left;
+	padding-right: 2em;
 }

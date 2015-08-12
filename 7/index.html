@@ -39,6 +39,11 @@
         <ul class="nav navbar-nav navbar-right">
          
 
+        <li><form class="navbar-form navbar-left" role="search"><div class="form-group">Sort By: <select ng-model="sort" class="form-control" ng-change="Reverse()">
+        <option value="votes">Votes</option>
+        <option value="date">Date</option>
+        <option value="title">Title</option>
+        </select> </div></form></li>
 
          <li><form class="navbar-form navbar-left" role="search"><div class="form-group"><input type="text" class="form-control" placeholder="Search">
          </div></form></li>
@@ -112,13 +117,15 @@
 
 
 
-<div ng-repeat="(key, post) in Posts | filter:searchText">
+<div ng-repeat="post in Posts | orderBy:sort:reverse ">
   
 
 <blockquote class="post">
 
 <img ng-src="{{post.image}}" alt="{{post.title}}" class="post_img"/>
-<p class="top"><span class="post_title">{{post.title}}</span> <span class="symbol">|</span> <span class="symbol" ng-click="post.votes = post.votes + 1">&#x25B2;</span> <span class="symbol" ng-click="post.votes = post.votes - 1">&#x25BC;</span> <span ng-class="{green: post.votes > 0, red: post.votes < 0}">{{post.votes}}</span></p>
+<p class="indent"><span class="post_title">{{post.title}}</span> <span class="symbol">|</span> <span class="symbol" ng-click="post.votes = post.votes + 1">&#x25B2;</span> <span class="symbol" ng-click="post.votes = post.votes - 1">&#x25BC;</span> <span ng-class="{green: post.votes > 0, red: post.votes < 0}">{{post.votes}}</span></p>
+<p>{{post.description}}</p>
+ <footer class="indent">{{post.author}}</footer>
 
 
 
@@ -147,12 +154,13 @@
 
 
 
-
+{{reverse}}
 
 {{newPost}}
 {{Posts}}
 
 <!-- ng-disabled="post_form.$invalid" -->
+<!-- | filter:searchText -->
 
 </div>
 </div>
