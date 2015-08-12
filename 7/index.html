@@ -45,7 +45,7 @@
         <option value="title">Title</option>
         </select> </div></form></li>
 
-         <li><form class="navbar-form navbar-left" role="search"><div class="form-group"><input type="text" class="form-control" placeholder="Search">
+         <li><form class="navbar-form navbar-left" role="search"><div class="form-group"><input ng-model="searchText" type="text" class="form-control" placeholder="Search">
          </div></form></li>
 
 
@@ -117,7 +117,7 @@
 
 
 
-<div ng-repeat="post in Posts | orderBy:sort:reverse ">
+<div ng-repeat="post in Posts | orderBy:sort:reverse | filter:searchText ">
   
 
 <blockquote class="post">
