@@ -19,7 +19,7 @@
       Reset
       </button></h1>
 
-<div ng-click="AddPointP()" ng-class="{blue: pscore.score <= 10, red: pscore.loser, green: pscore.winner }" class="playone">
+<div ng-click="AddPointP()" ng-class="{blue: pscore.score <= 10, red: pscore.loser, green: pscore.winner }" class="playone" ng-mouseover="Notice()">
 	
 <h1 class="center">Player 1 (score: {{pscore.games}})</h1>
 
@@ -30,7 +30,7 @@
 
 </div>
 
-<div ng-click="AddPointPP()" ng-class="{blue: pscore.score <= 10, red: ppscore.loser, green: ppscore.winner }" class="playtwo">
+<div ng-click="AddPointPP()" ng-class="{blue: pscore.score <= 10, red: ppscore.loser, green: ppscore.winner }" class="playtwo" ng-mouseover="Notice()">
 	
 <h1 class="center">Player 2 (score: {{ppscore.games}})</h1>
 
@@ -40,19 +40,11 @@
 <h2 ng-show="serve == 1 || serve == 2 || serve == 5 || serve == 6 || serve == 9 || serve == 10 || serve == 13 || serve == 14 || serve == 17 || serve == 18 || serve == 21 " class="center">Serving!</h2>
 
 
-
-
 </div> 
 
+<h1 class="notice">{{notice}}</h1>
 
 </div>
-
-
-
-
-
-
-
 	
 </body>
 </html>

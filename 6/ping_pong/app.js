@@ -5,6 +5,7 @@ app.controller("PingPongController", function($scope){
 $scope.pscore = {score: 0, winner: false, loser: false, games: 0};
 $scope.ppscore = {score: 0, winner: false, loser: false, games: 0};
 $scope.serve = 0;
+$scope.notice = "";
 $scope.AddPointP = function(){
         $scope.pscore.score = $scope.pscore.score + 1;
         $scope.serve = $scope.serve + 1;
@@ -40,5 +41,15 @@ $scope.Reset = function(){
         
     };
 
+$scope.Notice = function(){
+if ($scope.notice === "Let's Play!"){
+        $scope.notice = "";
+    } else {
+      $scope.notice = "Let's Play!";
+        }
+
+
+
+    };
 
 });
