@@ -14,6 +14,11 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-animate.js"></script>
 
+<!-- Animation Help -->
+
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+ -->
+
 <!-- jQuery -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -26,6 +31,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
 <script src="app.js"></script>
+
+<!-- <script src="ngFx.js"></script> -->
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -129,7 +136,9 @@
 
 <!-- ***** START OF NG-REPEAT *******  -->
 
-<div ng-repeat="post in Posts | orderBy:sort:reverse | filter:searchText ">
+<!-- ng-animate="'animate'"  -->
+
+<div ng-repeat="post in Posts | orderBy:sort:reverse | filter:searchText" class="repeated-item" >
   
 
 <blockquote class="post">

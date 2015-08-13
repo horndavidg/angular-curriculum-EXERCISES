@@ -1,4 +1,4 @@
-var app = angular.module("firstApp", []);
+var app = angular.module("firstApp", ['ngAnimate']);
 
 
   app.filter('fromNow', function() {
