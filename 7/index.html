@@ -125,19 +125,20 @@
 <blockquote class="post">
 
 <img ng-src="{{post.image}}" alt="{{post.title}}" class="post_img"/>
-<p class="indent"><span class="post_title">{{post.title}}</span> <span class="symbol">|</span> <span class="symbol" ng-click="post.votes = post.votes + 1">&#x25B2;</span> <span class="symbol" ng-click="post.votes = post.votes - 1">&#x25BC;</span> <span ng-class="{green: post.votes > 0, red: post.votes < 0}">{{post.votes}}</span></p>
+<p><span class="post_title">{{post.title}}</span> <span class="symbol">|</span> <span class="symbol" ng-click="post.votes = post.votes + 1">&#x25B2;</span> <span class="symbol" ng-click="post.votes = post.votes - 1">&#x25BC;</span> <span ng-class="{green: post.votes > 0, red: post.votes < 0}">{{post.votes}}</span></p>
 <p>{{post.description}}</p>
  <footer class="indent">{{post.author}}</footer>
-<p><span class="glyphicon glyphicon-floppy-disk"></span> {{post.date | fromNow }} | {{post.comments.length}} <ng-pluralize count="post.comments.length"
+ <br>
+<p><span class="glyphicon glyphicon-floppy-disk"></span> {{post.date | fromNow }} | {{post.comments.length}} <ng-pluralize ng-click="ShowCommentList()" count="post.comments.length"
                  when="{'0': 'Comments',
                         '1': 'Comment',
                         'other': 'Comments'}">
-</ng-pluralize> | <span class="glyphicon glyphicon-pencil"></span> <span ng-click="ShowCommentForm()">Add Comment</span></p>
+</ng-pluralize> | <span class="glyphicon glyphicon-pencil"></span> <span ng-click="ShowCommentForm(post)">Add Comment</span></p>
 
 
 <!-- Add Comments Form -->
 
-<form class="form-inline" novalidate name="comment_form" ng-show="commentForm == true">
+<form class="form-inline" novalidate name="comment_form" ng-show="post.comment_form == true">
   <div class="form-group">
     <label>Author</label>
     <input type="text" class="form-control" ng-model="newComment.author" name="author" placeholder="Author Name" required>
@@ -159,6 +160,15 @@
 
   <button ng-click="AddComment(newComment, post)" class="btn btn-success">Add Comment</button>
 </form>
+
+<div ng-repeat="comment in post.comments" ng-show="commentList == true">
+  
+<p class="padding"><strong>{{comment.author}} - </strong>{{comment.text}}</p>
+
+</div>
+
+
+
 
 
 
@@ -189,11 +199,6 @@
 
 
 <!-- ng-click="post.comments.push(newComment)" -->
-
-
-{{newComment}}
-{{newPost}}
-{{Posts}}
 
 <!-- ng-disabled="post_form.$invalid" -->
 <!-- | filter:searchText -->

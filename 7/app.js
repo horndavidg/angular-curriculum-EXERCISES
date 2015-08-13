@@ -10,11 +10,12 @@ var app = angular.module("firstApp", []);
 
 app.controller("RedditController", function($scope){
 
-$scope.newPost = {title: "", author: "", image: "", description: "", comments: [], votes: 0, date: ""};
+$scope.newPost = {title: "", author: "", image: "", description: "", comments: [], votes: 0, date: "", comment_form: false};
 $scope.Posts = [];
 $scope.newComment = {author: "", text: ""};
 $scope.postForm = false;
-$scope.commentForm = false;
+// $scope.commentForm = false;
+$scope.commentList = false;
 $scope.submitted = false;
 $scope.sort = "votes";
 $scope.reverse = true;
@@ -51,8 +52,10 @@ $scope.AddComment = function(newComment, post){
     // console.log(newComment)
     // console.log(post)
             post.comments.push(newComment);
+            post.comment_form = false;
             $scope.newComment = {author: "", text: ""};
-            $scope.commentForm = false;
+
+            // $scope.commentForm = false;
             // $scope.comment_form.submitted = false;
  };
 
@@ -72,14 +75,30 @@ $scope.AddComment = function(newComment, post){
 //     }
 //  };
 
-$scope.ShowCommentForm = function(){
-        if ($scope.commentForm === false){
-            $scope.commentForm = true;
+$scope.ShowCommentForm = function(post){
+        if (post.comment_form === false){
+            post.comment_form = true;
                 } else {
-             $scope.commentForm = false;
+            post.comment_form = false;
             }
          };
 
+
+// $scope.ShowCommentForm = function(){
+//         if ($scope.commentForm === false){
+//             $scope.commentForm = true;
+//                 } else {
+//              $scope.commentForm = false;
+//             }
+//          };
+
+$scope.ShowCommentList = function(){
+        if ($scope.commentList === false){
+            $scope.commentList = true;
+                } else {
+             $scope.commentList = false;
+            }
+         };
 
 $scope.Reverse = function(){
         if ($scope.sort === "title"){
