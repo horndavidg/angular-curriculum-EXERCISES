@@ -108,18 +108,6 @@ $scope.Reverse = function(){
             }
          };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
+
+
