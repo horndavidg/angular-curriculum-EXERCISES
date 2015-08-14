@@ -13,13 +13,28 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl: 'partials/home.html',
         controller: 'MainController'
       })
-      .when('/add/:one/:two', {
+      
+       .when('/add', {
         templateUrl: 'partials/add.html',
         controller: 'AddController'
       })
-      .when('/div/:one/:two', {
+
+      // Non-query string version
+      // .when('/add/:one/:two', {
+      //   templateUrl: 'partials/add.html',
+      //   controller: 'AddController'
+      // })
+
+       .when('/div', {
         templateUrl: 'partials/div.html',
         controller: 'DivController'
       })
+
+      // Non-query string version
+      // .when('/div/:one/:two', {
+      //   templateUrl: 'partials/div.html',
+      //   controller: 'DivController'
+      // })
+
       .otherwise({ redirectTo: "/" });
   });

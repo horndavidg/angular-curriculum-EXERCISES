@@ -8,15 +8,25 @@ app.controller('MainController', function($scope, $route, $routeParams, $locatio
 
 app.controller('AddController', function($scope, $route, $routeParams, $location){
     $scope.message = "Addition"
-    $scope.paramsone = parseInt($routeParams.one);
-    $scope.paramstwo = parseInt($routeParams.two);
+    
+    $scope.paramsone = parseInt($location.search().x);
+    $scope.paramstwo = parseInt($location.search().y);
+    
+    // Non-query string version
+    // $scope.paramsone = parseInt($routeParams.one);
+    // $scope.paramstwo = parseInt($routeParams.two);
 
 });
 
 app.controller('DivController', function($scope, $route, $routeParams, $location){
     $scope.message = "Division"
-    $scope.paramsone = parseInt($routeParams.one);
-    $scope.paramstwo = parseInt($routeParams.two);
+    
+    $scope.paramsone = parseInt($location.search().x);
+    $scope.paramstwo = parseInt($location.search().y);
+
+    // Non-query string version
+    // $scope.paramsone = parseInt($routeParams.one);
+    // $scope.paramstwo = parseInt($routeParams.two);
 
 });
 
