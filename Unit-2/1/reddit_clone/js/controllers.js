@@ -9,7 +9,11 @@ $scope.sort = "votes";
 $scope.reverse = true;
 
 $scope.AddPost = function(newPost){
-        
+      
+// Can use '$scope.newPost' instead of passing the variable
+// through the function. The controller already knows about it 
+// because it exists on the current scope. 
+
 	if ($scope.post_form.$valid) {
       $scope.newPost.date = new Date();
 			$scope.Posts.push(newPost);
