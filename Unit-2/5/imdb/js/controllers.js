@@ -26,7 +26,7 @@ $scope.ShowMovie = function(){
 
 
   $http.get('http://www.omdbapi.com/?i=' + this.data.imdbID.toString()).then(function(data){
-        console.log(data.data)
+        // console.log(data.data)
      $rootScope.movieData = data.data;
   
      $location.url('/show');
