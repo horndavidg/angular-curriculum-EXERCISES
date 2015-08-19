@@ -1,0 +1,15 @@
+<h3 class="text-center">Results:</h3>
+
+<div class="row text-center">
+  
+<div ng-repeat="data in moviesData">
+
+
+<div class="col-md-6 search_box" ng-click="ShowMovie()" >
+
+ <h2 class="text-center box_text">{{data.Title}}</h2>
+<h4 class="text-center box_text">year: {{data.Year}}</h4>
+</div>
+
+</div>
+</div>
