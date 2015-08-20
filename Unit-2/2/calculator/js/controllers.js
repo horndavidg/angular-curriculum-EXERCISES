@@ -1,13 +1,11 @@
-
-
 app.controller('MainController', function($scope, $route, $routeParams, $location){
-    $scope.message = "HOME"
+    $scope.message = "HOME";
    
 });
 
 
 app.controller('AddController', function($scope, $route, $routeParams, $location){
-    $scope.message = "Addition"
+    $scope.message = "Addition";
     
     $scope.paramsone = parseInt($location.search().x);
     $scope.paramstwo = parseInt($location.search().y);
@@ -19,7 +17,7 @@ app.controller('AddController', function($scope, $route, $routeParams, $location
 });
 
 app.controller('DivController', function($scope, $route, $routeParams, $location){
-    $scope.message = "Division"
+    $scope.message = "Division";
     
     $scope.paramsone = parseInt($location.search().x);
     $scope.paramstwo = parseInt($location.search().y);
@@ -38,4 +36,4 @@ app.controller("LocationController", function($scope, $route, $routeParams, $loc
      return angular.isObject(result) ? angular.toJson(result) : result;
    };
   });
-})
+});
