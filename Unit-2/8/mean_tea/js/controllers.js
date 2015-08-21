@@ -1,4 +1,7 @@
-app.controller("MainController", ["$scope", function($scope){
+app.controller("MainController", ["$scope", "TeaList", function($scope, TeaList){
+
+
+$scope.teaData = TeaList.teas;
 
 
 
