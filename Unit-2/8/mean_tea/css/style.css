@@ -1,0 +1,60 @@
+
+#mainNav {
+    
+  border-radius: 0;
+  
+}
+
+.post {
+    
+	overflow: hidden;
+    background: rgba(223, 255, 240, 0.6);
+}
+
+.post_title {
+
+	font-size: 24px;
+	font-style: bold;
+}
+
+.indent {
+
+	 text-indent: 2em;
+	 padding-left: 2em;
+
+}
+
+.padding {
+
+	margin-left: 18em;
+
+}
+
+.small {
+	font-size: 10px;
+}
+
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+
+.symbol {
+    
+	font-size: 20px;
+}
+
+.post_img {
+
+	height: 260px;
+	width: 260px;
+	float: left;
+	padding-right: 2em;
+}
+
+
