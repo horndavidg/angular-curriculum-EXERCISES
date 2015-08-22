@@ -11,14 +11,59 @@
 <div ng-repeat="tea in teaData[0]">
   
 <div class="row">
-<div class="col-md-4"><img ng-src="{{tea.imageUrl}}" alt="No Image">
+
+
+
+<!-- Column One -->
+
+<div class="col-md-4 box"><img ng-src="{{tea.imageUrl}}" alt="No Image">
 </div>
 
-<div class="col-md-8"><h4>{{tea.name}}</h4>
+
+
+
+
+<!-- Column Two -->
+
+
+<div class="col-md-8 box">
+
+<h4>{{tea.name}}</h4>
+
+<p><strong>Price: </strong>{{tea.price | currency }}</p>
+
+<p><strong>Caffeine Scale: </strong>{{tea.caffeineScale}}</p>
+
+<p><strong>Ingredients: </strong>{{tea.ingredients}}</p>
+
+<p><strong>Rating: </strong>{{tea.rating}}</p>
+
+<p><strong>In Stock? </strong>
+<span ng-show="tea.inStock == true" class="green">Yes</span>
+<span ng-show="tea.inStock == false" class="red">No</span>
+</p>
+
+<p><strong>Categories:</strong></p>
+
+<div ng-repeat="category in tea.categories">
+ 
+ <p>- {{category}}</p>
+
 </div>
 
 
 
 
-</div>
+
+
+    
+
+
+
+
+
+
+
+    </div>
+  </div>
 </div>

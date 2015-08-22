@@ -2,7 +2,7 @@ app.controller("MainController", ["$scope", "TeaList", function($scope, TeaList)
 
 
 $scope.teaData = TeaList.teas;
-
+// console.log(TeaList.teas);
 
 
 }]);
