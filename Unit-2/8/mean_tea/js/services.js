@@ -12,6 +12,8 @@ $http.get('../tea.json').then(function(data){
             x = x.substring(0, (x.length-2)) + "." + x.substring((x.length-2), x.length);
             data.data[i].price= x;
 
+       data.data[i].quantity = 0;  
+
    		}
 
         TeaList.teas.push(data.data);

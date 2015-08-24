@@ -8,7 +8,7 @@
 </div>
 </div>
 
-<div ng-repeat="tea in teaData[0]">
+<div ng-repeat="tea in teaData[0] | orderBy:sort | filter:searchText | filter:searchCat:strict">
   
 <div class="row">
 
@@ -16,7 +16,7 @@
 
 <!-- Column One -->
 
-<div class="col-md-4 box"><img ng-src="{{tea.imageUrl}}" alt="No Image">
+<div class="col-md-3 box"><img ng-src="{{tea.imageUrl}}" alt="No Image">
 </div>
 
 
@@ -26,7 +26,7 @@
 <!-- Column Two -->
 
 
-<div class="col-md-8 box">
+<div class="col-md-6 box">
 
 <h4>{{tea.name}}</h4>
 
@@ -50,13 +50,39 @@
  <p>- {{category}}</p>
 
 </div>
+ </div>
+
+
+
+<!-- Column Three -->
+
+<div class="col-md-3 box">
+
+<form class="form-inline quantity">
+  <div class="form-group">
+    <label>Quantity: </label>
+    <select ng-model="tea.quantity" class="form-control" ng-change="" convert-to-number>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        </select>
+  </div>
+  <button type="submit" class="btn btn-success">Add To Bag</button>
+</form>
+
+
+<p>{{tea.quantity}}</p>
+
+</div>
 
 
 
 
 
 
-    
 
 
 
@@ -64,6 +90,7 @@
 
 
 
-    </div>
+
+
   </div>
 </div>

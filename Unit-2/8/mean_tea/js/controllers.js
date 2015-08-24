@@ -1,12 +1,30 @@
-app.controller("MainController", ["$scope", "TeaList", function($scope, TeaList){
+app.controller("MainController", ["$scope", "TeaList", "$rootScope", function($scope, TeaList, $rootScope){
 
 
 $scope.teaData = TeaList.teas;
-// console.log(TeaList.teas);
 
+
+
+
+
+
+
+
+
+
+// $scope.Reverse = function(){
+// 	console.log("this ran");
+//         if ($scope.sort === "price"){
+//             $rootScope.reverse = false;
+//                 } else {
+//              $rootScope.reverse = true;
+//              $scope.sort = "price";
+//             }
+
+//             console.log($rootScope.reverse);
+//          };
 
 }]);
-
 
 // ---------------------------------------
 
