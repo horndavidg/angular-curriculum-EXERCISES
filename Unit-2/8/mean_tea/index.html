@@ -55,7 +55,11 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
       			
-      			 <li><a href="/">Home</a></li>
+      			 <li><a href="#/">Home</a></li>
+             <li></li>
+             
+             <!-- Cart Button -->
+             <li><button type="button" class="btn btn-info navbar-btn"><strong>Checkout</strong> | Bag: <span ng-show="!bagTotal[0] || bagTotal[0] == 0">Empty!</span><span ng-show="bagTotal[0] != 0">{{bagTotal[0]}}</span></button></li>
  				
         </ul>
 

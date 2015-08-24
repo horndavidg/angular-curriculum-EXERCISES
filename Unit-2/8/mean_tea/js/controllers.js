@@ -2,9 +2,10 @@ app.controller("MainController", ["$scope", "TeaList", "$rootScope", function($s
 
 
 $scope.teaData = TeaList.teas;
+$rootScope.bagTotal = TeaList.bagTotal;
+$scope.FindTotal = TeaList.findTotal;
 
-
-
+console.log()
 
 
 
