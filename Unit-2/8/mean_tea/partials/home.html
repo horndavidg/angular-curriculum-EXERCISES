@@ -7,8 +7,8 @@
 <h3 class="text-center"><u>Information</u></h3>
 </div>
 </div>
-
-<div ng-repeat="tea in teaData[0] | orderBy:sort | filter:searchText | filter:searchCat:strict">
+   
+<div ng-repeat="tea in teaData[0] | orderBy:sort | filter:searchText | filter:paramOne:strict | filter:paramTwo:strict | filter:paramThree:strict">
   
 <div class="row">
 
@@ -61,18 +61,20 @@
 <form class="form-inline quantity">
   <div class="form-group">
     <label>Quantity: </label>
-    <select ng-model="tea.quantity" class="form-control" ng-change="" convert-to-number>
-        <option value="0">0</option>
-        <option value="1">1</option>
+    <select ng-model="tea.quantity" class="form-control" convert-to-number>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
         </select>
   </div>
-  <button type="submit" class="btn btn-success" ng-click="FindTotal()">Add To Bag</button>
+  <button type="submit" class="btn btn-success" ng-click="FindTotal($index)">Add To Bag</button>
 </form>
-
 
 
 

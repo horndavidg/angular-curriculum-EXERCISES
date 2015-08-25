@@ -37,19 +37,17 @@ margin-top: 60px;
 	color: green;
 }
 
-
-.symbol {
-    
-	font-size: 20px;
-}
-
 .tea_img {
 
-	height: 260px;
-	width: 260px;
 	float: left;
 	padding-right: 2em;
 }
+
+.top-space {
+
+	margin-top: 3em;
+}
+
 
 .box {
 

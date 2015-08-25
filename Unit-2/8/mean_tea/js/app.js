@@ -7,7 +7,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'partials/home.html',
         controller: 'MainController'
       })
-      .when('/show/:id', {
+      .when('/show', {
         templateUrl: 'partials/cart.html',
         controller: 'CartController'
       })

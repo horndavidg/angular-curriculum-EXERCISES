@@ -46,6 +46,8 @@
 
 <div ng-controller="MainController">
 
+
+
  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -56,10 +58,9 @@
         <ul class="nav navbar-nav">
       			
       			 <li><a href="#/">Home</a></li>
-             <li></li>
              
              <!-- Cart Button -->
-             <li><button type="button" class="btn btn-info navbar-btn"><strong>Checkout</strong> | Bag: <span ng-show="!bagTotal[0] || bagTotal[0] == 0">Empty!</span><span ng-show="bagTotal[0] != 0">{{bagTotal[0]}}</span></button></li>
+             <li><a href="#/show" ng-click="MakeCart()"><button type="button" class="btn btn-info"><strong>Checkout</strong> | Bag: <span ng-show="!bagTotal[0] || bagTotal[0] == 0">Empty!</span><span ng-show="bagTotal[0] && bagTotal[0] != 0">({{bagTotal[0]}})</span></button></a></li>
  				
         </ul>
 
@@ -67,11 +68,13 @@
         
 
          <li><form class="navbar-form navbar-left" role="search"><div class="form-group">Sort By Price: <select ng-model="sort" class="form-control" >
-        <option value="price">Ascending</option>
-        <option value="-price">Descending</option>
+        <option value="price">Lowest</option>
+        <option value="-price">Highest</option>
         </select> </div></form></li>
 
-         <li><form class="navbar-form navbar-left" role="search"><div class="form-group">Search By Category: <select ng-model="searchCat.categories" class="form-control" ng-change="">
+
+         <li><form class="navbar-form navbar-left" role="search"><div class="form-group">Search <!-- By Category: <select ng-model="searchCat.categories" class="form-control" ng-change=""> -->
+         By Category: <select ng-model="searchCat" class="form-control" ng-change="setCats()">
         <option value="">None</option>
         <option value="dark">Dark</option>
         <option value="cold">Cold</option>
@@ -83,6 +86,10 @@
         <option value="winter">Winter</option>
         <option value="spring">Spring</option>
         </select> </div></form></li>
+
+ 
+
+        <li><button type="button" class="btn btn-warning navbar-btn btn-xs" ng-click="resetCats()">Reset</button></li>
 
          <li><form class="navbar-form navbar-left" role="search" name="search_form"><div class="form-group"><input ng-model="searchText" type="text" class="form-control" placeholder="Search by name">
          </div></form></li>
