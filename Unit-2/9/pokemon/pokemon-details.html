@@ -1,0 +1,24 @@
+<div ng-repeat="pokemon in pokemons track by $index">
+
+<h2 style="color:blue">{{pokemon.name}}</h2>
+
+<h3 style="color:green">Types:</h3>
+<p>
+<div ng-repeat="type in pokemon.type track by $index">
+{{type.name}}
+</div>
+</p>
+
+
+<h3 style="color:green">Moves:</h3>
+<p>
+<div ng-repeat="move in pokemon.moves | limitTo:6 track by $index">
+{{move.name}}
+</div>
+</p>
+
+<img ng-src="{{pokemon.image}}" alt="None">
+
+</div>
+
+
