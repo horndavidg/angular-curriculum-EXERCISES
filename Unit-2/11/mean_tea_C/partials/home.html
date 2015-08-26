@@ -1,0 +1,102 @@
+
+<div class="row">
+<div class="col-md-4">
+<h3 class="text-center"><u>Tea</u></h3>
+</div>
+<div class="col-md-8">
+<h3 class="text-center"><u>Information</u></h3>
+</div>
+</div>
+   
+<div ng-repeat="tea in teaData[0] | orderBy:sort | filter:searchText | filter:paramOne:strict | filter:paramTwo:strict | filter:paramThree:strict">
+  
+<div class="row">
+
+
+
+<!-- Column One -->
+
+<div class="col-md-3 box"><img ng-src="{{tea.imageUrl}}" alt="No Image">
+</div>
+
+
+
+
+
+<!-- Column Two -->
+
+
+<div class="col-md-6 box">
+
+<h4>{{tea.name}}</h4>
+
+<p><strong>Price: </strong>{{tea.price | currency }}</p>
+
+<p><strong>Caffeine Scale: </strong>{{tea.caffeineScale}}</p>
+
+<p><strong>Ingredients: </strong>{{tea.ingredients}}</p>
+
+<p><strong>Rating: </strong>{{tea.rating}}</p>
+
+<p><strong>In Stock? </strong>
+<span ng-show="tea.inStock == true" class="green">Yes</span>
+<span ng-show="tea.inStock == false" class="red">No</span>
+</p>
+
+<p><strong>Categories:</strong></p>
+
+<div ng-repeat="category in tea.categories">
+ 
+ <p>- {{category}}</p>
+
+</div>
+ </div>
+
+
+
+<!-- Column Three -->
+
+<div class="col-md-3 box">
+
+<form class="form-inline quantity">
+  <div class="form-group">
+    <label>Quantity: </label>
+    <select ng-model="tea.quantity" class="form-control" convert-to-number>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select>
+  </div>
+  <button type="submit" class="btn btn-success" ng-click="FindTotal($index)">Add To Bag</button>
+</form>
+
+<dh-caffeine-meter caffeinemg="tea.caffeineScale" id="tea._id"></dh-caffeine-meter>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
