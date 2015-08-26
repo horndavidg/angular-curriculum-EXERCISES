@@ -1,0 +1,57 @@
+<h1 class="text-center">Photos go HERE!</h1>
+
+<div class="row" ng-show="photoArray.length > 4">
+
+ <div class="col-xs-6 col-md-2">
+    <a href="#" class="thumbnail">
+      <img ng-src="{{photoArray[numFirst]}}" alt="None">
+    </a>
+  </div>
+
+ <div class="col-xs-6 col-md-2">
+    <a href="#" class="thumbnail">
+      <img ng-src="{{photoArray[numSecond]}}" alt="None">
+    </a>
+  </div>
+
+  <div class="col-xs-6 col-md-4">
+    <a href="#" class="thumbnail">
+      <img ng-src="{{photoArray[num]}}" alt="None">
+    </a>
+  </div>
+
+ <div class="col-xs-6 col-md-2">
+    <a href="#" class="thumbnail">
+      <img ng-src="{{photoArray[numFourth]}}" alt="None">
+    </a>
+  </div>
+
+ <div class="col-xs-6 col-md-2">
+    <a href="#" class="thumbnail">
+      <img ng-src="{{photoArray[numFifth]}}" alt="None">
+    </a>
+  </div>
+
+
+</div>
+
+<!-- End Thumbnails -->
+
+<!-- Start Carousel -->
+
+<div class="row">
+
+<div class="col-md-2">	
+<button type="button" class="btn btn-info btn-lg"  ng-click="back()"><span class="glyphicon glyphicon-backward"></span></button>
+</div>
+
+<div class="col-md-8">
+<img class="text-center" ng-src="{{photoArray[num]}}" alt="Not Working" height"700" width="700">	
+</div>
+
+<div class="col-md-2">
+<button type="button" class="btn btn-info btn-lg" ng-click="forward()"><span class="glyphicon glyphicon-forward"></span></button>
+</div>
+
+</div>
+
