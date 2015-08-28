@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="digCoinApp">
+<head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
+
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+<!-- AngularFire -->
+
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<script src="js/app.js" type="text/javascript"></script>
+<script src="js/controllers.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<br>
+<br>
+<div ng-controller="MainController">
+<div class="container">
+
+<div class="row">
+	
+<div class="col-md-2">
+	
+	<h1 class="text-center">Digital Coin Converter:</h1>
+
+</div>
+
+<div class="col-md-6">
+<div class="text-center second">
+<h2>Enter amount in USD and select conversion:</h2>
+<input type="number" ng-model="amount">
+
+<select ng-model="coin" convert-to-number>
+  <option value=""></option>
+  <option value="{{coinData.bitcoin.ask}}">BTC</option>
+  <option value="{{coinData.dogecoin.ask}}">XDG</option>
+  <option value="{{coinData.litecoin.ask}}">LTC</option>
+</select>
+</div>
+</div>
+
+
+
+<div class="col-md-4">
+	
+	
+<h3 class="text-center second" ng-show="coin == coinData.bitcoin.ask && amount">BTC = {{amount/coinData.bitcoin.ask | currency:"USD$":2 }}</h3>
+<h3 class="text-center second" ng-show="coin == coinData.dogecoin.ask && amount">XDG = {{amount/coinData.dogecoin.ask | currency:"USD$":2 }}</h3>
+<h3 class="text-center second" ng-show="coin == coinData.litecoin.ask && amount">LTC = {{amount/coinData.litecoin.ask | currency:"USD$":2 }}</h3>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+</body>
+</html>
