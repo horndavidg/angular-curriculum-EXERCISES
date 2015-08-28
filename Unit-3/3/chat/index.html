@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="chatApp">
+<head>
+
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+
+<!-- Semantic-UI -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css">
+
+<script src="js/app.js" type="text/javascript"></script>
+<script src="js/controllers.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+
+<div class="ui grid" ng-controller="MainController">
+
+<div class="four wide column"></div>
+
+
+
+<div class="eight wide column">
+
+<div class="ui list segment">
+<h1 class="heading">AngularFire Chat</h1>
+
+<a class="item" ng-repeat="chat in chats">
+     
+    <div class="content">
+      
+	<img class="image" ng-src="{{chat.image}}" alt="None" height="100" width="100">
+    <div class="header" ng-click="">{{chat.username}}</div>
+    <p ng-dblclick="Edit(chat)" ng-hide="chat.edit">{{chat.message}}</p> 
+<div ng-show="chat.edit">
+<input type="text" ng-model="chat.message"><p ng-click="Update(chat)">SAVE</p>
+</div>
+    <i class="remove icon" ng-click="Remove(chat)"></i>
+
+          </div>
+       </a>
+     </div> 
+
+
+<form class="ui form" >
+<div class="field">
+  
+<label>User Name</label>
+<input type="text" ng-model="newChat.username" placeholder="username">
+<label>Avatar URL</label>
+<input type="text" ng-model="newChat.image" placeholder="url only please">
+<label>Message</label>
+<input type="text" ng-model="newChat.message" placeholder="message">
+<br>
+<button ng-click="addChat()" class="ui primary button">Submit
+</button>
+</div>
+</form>
+</div>
+
+
+<div class="four wide column"></div>
+
+
+
+
+
+</div>
+</body>
+</html>
